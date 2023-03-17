@@ -17,6 +17,7 @@
 		D38703A129C3EC58004A8058 /* ShoppingList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D38703A029C3EC58004A8058 /* ShoppingList.storyboard */; };
 		D38703A329C3F03C004A8058 /* AddProduct.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D38703A229C3F03C004A8058 /* AddProduct.storyboard */; };
 		D38703A529C3F1D0004A8058 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D38703A429C3F1D0004A8058 /* Settings.storyboard */; };
+		D38703A829C3F39C004A8058 /* ToolbarPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38703A729C3F39C004A8058 /* ToolbarPickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		D38703A029C3EC58004A8058 /* ShoppingList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ShoppingList.storyboard; sourceTree = "<group>"; };
 		D38703A229C3F03C004A8058 /* AddProduct.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = AddProduct.storyboard; path = "../../../Projeto-Conclusao-iOS/HeltonHeltonLyanRicardo/HeltonHeltonLyanRicardo/View/AddProduct.storyboard"; sourceTree = "<group>"; };
 		D38703A429C3F1D0004A8058 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		D38703A729C3F39C004A8058 /* ToolbarPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarPickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,12 +79,13 @@
 		D387037C29C399A6004A8058 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				D38703A429C3F1D0004A8058 /* Settings.storyboard */,
-				D38703A229C3F03C004A8058 /* AddProduct.storyboard */,
-				D38703A029C3EC58004A8058 /* ShoppingList.storyboard */,
 				D387037F29C39A59004A8058 /* LaunchScreen.storyboard */,
 				D387037D29C399CF004A8058 /* Main.storyboard */,
+				D38703A229C3F03C004A8058 /* AddProduct.storyboard */,
+				D38703A429C3F1D0004A8058 /* Settings.storyboard */,
+				D38703A029C3EC58004A8058 /* ShoppingList.storyboard */,
 				D387039229C3A78B004A8058 /* ShoppingSummary.storyboard */,
+				D38703A629C3F35F004A8058 /* ToolbarView */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -93,6 +96,14 @@
 				D3603ACA29C34C3000CE0825 /* ViewController.swift */,
 			);
 			path = viewController;
+			sourceTree = "<group>";
+		};
+		D38703A629C3F35F004A8058 /* ToolbarView */ = {
+			isa = PBXGroup;
+			children = (
+				D38703A729C3F39C004A8058 /* ToolbarPickerView.swift */,
+			);
+			path = ToolbarView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,6 +183,7 @@
 			files = (
 				D3603ACB29C34C3000CE0825 /* ViewController.swift in Sources */,
 				D3603AC729C34C3000CE0825 /* AppDelegate.swift in Sources */,
+				D38703A829C3F39C004A8058 /* ToolbarPickerView.swift in Sources */,
 				D3603AC929C34C3000CE0825 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
