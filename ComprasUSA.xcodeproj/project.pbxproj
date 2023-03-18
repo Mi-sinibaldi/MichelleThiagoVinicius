@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D305316C29C5F15900CE1C4C /* NewProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D305316B29C5F15900CE1C4C /* NewProductViewController.swift */; };
 		D3603AC729C34C3000CE0825 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3603AC629C34C3000CE0825 /* AppDelegate.swift */; };
 		D3603AC929C34C3000CE0825 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3603AC829C34C3000CE0825 /* SceneDelegate.swift */; };
-		D3603ACB29C34C3000CE0825 /* ShoppingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3603ACA29C34C3000CE0825 /* ShoppingListViewController.swift */; };
 		D3603AD029C34C3200CE0825 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3603ACF29C34C3200CE0825 /* Assets.xcassets */; };
 		D387037E29C399CF004A8058 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D387037D29C399CF004A8058 /* Main.storyboard */; };
 		D387038029C39A59004A8058 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D387037F29C39A59004A8058 /* LaunchScreen.storyboard */; };
@@ -21,10 +21,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D305316B29C5F15900CE1C4C /* NewProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProductViewController.swift; sourceTree = "<group>"; };
 		D3603AC329C34C3000CE0825 /* ComprasUSA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComprasUSA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3603AC629C34C3000CE0825 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3603AC829C34C3000CE0825 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D3603ACA29C34C3000CE0825 /* ShoppingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListViewController.swift; sourceTree = "<group>"; };
 		D3603ACF29C34C3200CE0825 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3603AD429C34C3200CE0825 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D387037D29C399CF004A8058 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -93,7 +93,7 @@
 		D387039129C3A55F004A8058 /* viewController */ = {
 			isa = PBXGroup;
 			children = (
-				D3603ACA29C34C3000CE0825 /* ShoppingListViewController.swift */,
+				D305316B29C5F15900CE1C4C /* NewProductViewController.swift */,
 			);
 			path = viewController;
 			sourceTree = "<group>";
@@ -181,10 +181,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3603ACB29C34C3000CE0825 /* ShoppingListViewController.swift in Sources */,
 				D3603AC729C34C3000CE0825 /* AppDelegate.swift in Sources */,
 				D38703A829C3F39C004A8058 /* ToolbarPickerView.swift in Sources */,
 				D3603AC929C34C3000CE0825 /* SceneDelegate.swift in Sources */,
+				D305316C29C5F15900CE1C4C /* NewProductViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
