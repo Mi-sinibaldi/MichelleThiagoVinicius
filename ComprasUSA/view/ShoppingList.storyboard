@@ -135,7 +135,7 @@
         <scene sceneID="hx8-8A-hEX">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="i61-mK-KIo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Compras" image="suitcase" catalog="system" id="mAb-rb-pEX"/>
+                    <tabBarItem key="tabBarItem" title="Compras" image="Shopping" id="mAb-rb-pEX"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JFv-uR-SAQ">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -152,7 +152,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="suitcase" catalog="system" width="128" height="100"/>
+        <image name="Shopping" width="22" height="22"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
