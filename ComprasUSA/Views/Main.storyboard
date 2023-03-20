@@ -70,26 +70,26 @@
                                 <rect key="frame" x="0.0" y="227" width="414" height="516"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="E0k-ax-sGH">
-                                    <rect key="frame" x="0.0" y="131.5" width="414" height="44"/>
+                                    <rect key="frame" x="0.0" y="131" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="State" id="e0y-Ug-Ytg" customClass="StateTableViewCell" customModule="ComprasUSA" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="414" height="53.5"/>
+                                        <rect key="frame" x="0.0" y="50" width="414" height="53"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="e0y-Ug-Ytg" id="RQk-K6-GbY">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="53.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="53"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estado" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NUr-K1-Bww">
-                                                    <rect key="frame" x="30" y="16" width="53" height="21.5"/>
+                                                    <rect key="frame" x="30" y="16" width="53" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Valor" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibW-Ac-hKy">
-                                                    <rect key="frame" x="345" y="16" width="39" height="21.5"/>
+                                                    <rect key="frame" x="345" y="16" width="39" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" systemColor="systemRedColor"/>
                                                     <nil key="highlightedColor"/>
@@ -246,7 +246,11 @@
                         </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" title="Lista de Compras" id="i4Q-FH-WFf">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="5vb-b1-Qiw"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="5vb-b1-Qiw">
+                            <connections>
+                                <segue destination="VvS-kh-GFb" kind="show" id="aaA-ZK-oQD"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
@@ -264,7 +268,7 @@
                         <viewLayoutGuide key="safeArea" id="eh8-ZQ-hOc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="2CU-dZ-0Q1"/>
+                    <navigationItem key="navigationItem" title="Cadastrar Produto" id="2CU-dZ-0Q1" userLabel="Cadastrar Produto"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mtB-1S-xol" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
