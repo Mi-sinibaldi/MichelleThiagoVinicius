@@ -8,9 +8,9 @@
 import UIKit
 
 class Product {
-    var name: String = ""
+    var name: String? = ""
     var isCreditCard: Bool = false
-    var state: String = ""
-    var price: Double = 0.0
-    var image: UIImage = UIImage(named: "bag.fill.badge.plus")!
+    var state: String? = ""
+    var price: Double? = 0.0
+    var image: UIImage? = UIImage(named: "bag.fill.badge.plus")!
 }
