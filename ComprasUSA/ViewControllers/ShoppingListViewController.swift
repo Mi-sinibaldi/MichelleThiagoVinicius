@@ -9,7 +9,7 @@ import UIKit
 
 class ShoppingListViewController: UITableViewController {
 
-    var products: [Product] = [];
+    var products: [ProductEntity] = [];
 
     override func viewDidLoad() {
         super.viewDidLoad()

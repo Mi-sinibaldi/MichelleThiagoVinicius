@@ -14,150 +14,130 @@ class NewProductViewController: UIViewController {
     @IBOutlet weak var nameProduct: UITextField!
     @IBOutlet weak var stateProduct: UITextField!
     @IBOutlet weak var valueProduct: UITextField!
-    @IBOutlet weak var imageProduct: UIImageView!
     @IBOutlet weak var switchProduct: UISwitch!
+    @IBOutlet weak var imageProduct: UIImageView!
     
     private var states: [NSManagedObject] = [] {
-          didSet {
-              statePicker.reloadAllComponents()
-          }
-      }
-    
-        private var image: UIImage? {
-            didSet {
-                self.imageProduct.image = image
-                self.imageProduct.setNeedsDisplay()
-            }
+        didSet {
+            stateSelector.reloadAllComponents()
         }
-        
+    }
+    
+    private var image: UIImage? {
+        didSet {
+            self.imageProduct.image = image
+            self.imageProduct.setNeedsDisplay()
+        }
+    }
+    
     private var selectedState: NSManagedObject?
     
-    private let statePicker = ToolbarPickerView()
+    private let stateSelector = ToolbarPickerView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let tap = UITapGestureRecognizer(target: self, action: #selector(self.changeProductPicture))
-               self.imageProduct.addGestureRecognizer(tap)
-               
-               self.stateProduct.inputView = statePicker
-               self.stateProduct.inputAccessoryView = statePicker.toolbar
-               
-               self.statePicker.delegate = self
-               self.statePicker.dataSource = self
-               self.statePicker.toolbarDelegate = self
+        configureTap()
         
+        self.stateProduct.inputView = stateSelector
+        self.stateProduct.inputAccessoryView = stateSelector.toolbar
+        
+        self.stateSelector.delegate = self
+        self.stateSelector.dataSource = self
+        self.stateSelector.toolbarDelegate = self
     }
     
-    // opens device camera and gallery
-    @objc private func changeProductPicture() {
-            let action = UIAlertController(title: "Adicionar Imagem",
-                                           message: "De onde você quer escolher a imagem do produto?",
-                                           preferredStyle: .actionSheet)
-            
-            if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-                let photoLibrary = UIAlertAction(title: "Biblioteca de fotos", style: .default) { _ in
-                    let imagePicker = UIImagePickerController()
-                    imagePicker.sourceType = .photoLibrary
-                    imagePicker.allowsEditing = true
-                    imagePicker.delegate = self
-                    self.present(imagePicker, animated: true)
-                }
-                action.addAction(photoLibrary)
-            }
-            
-            if UIImagePickerController.isSourceTypeAvailable(.camera) {
-                let camera = UIAlertAction(title: "Câmera", style: .default) { _ in
-                    let imagePicker = UIImagePickerController()
-                    imagePicker.sourceType = .camera
-                    imagePicker.allowsEditing = true
-                    imagePicker.delegate = self
-                    self.present(imagePicker, animated: true)
-                }
-                action.addAction(camera)
-            }
-            
-            let cancel = UIAlertAction(title: "Cancelar", style: .cancel)
-            action.addAction(cancel)
-            
-            self.present(action, animated: true, completion: nil)
-        }
-    
     override func viewWillAppear(_ animated: Bool) {
-          super.viewWillAppear(animated)
-          
-          self.fetchStates()
-      }
-      
-      private func fetchStates() {
-          guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-          
-          let managedContext = appDelegate.persistentContainer.viewContext
-          
-          let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "StateEntity")
-          
-          do {
-              self.states = try managedContext.fetch(fetchRequest)
-          } catch let error as NSError {
-              print("Could not fetch. \(error), \(error.userInfo)")
-          }
-      }
+        super.viewWillAppear(animated)
+        self.fetchStates()
+    }
     
-    func showAlert(message: String)  {
-            let alert = UIAlertController(title: "Dados inválidos", message: "\(message)", preferredStyle: UIAlertController.Style.alert)
-            
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-            
-            self.present(alert, animated: true, completion: nil)
-            
-        }
+    // MARK: - Button and Image View actions
     
-    func verifyProduct(_ product: Product) -> Bool {
-            
-            guard let name =  product.name, !name.isEmpty else {
-                showAlert(message: "Nome do produto é obrigatório!")
-                return false
-            }
-
-            guard let _ = product.image else {
-                showAlert(message: "Imagem do produto é obrigatório!")
-                return false
-            }
-            
-            guard let _ = product.state else {
-                showAlert(message: "Selecione ou adicinone um estado")
-                return false
-            }
-
-            guard let _ = product.price else {
-                showAlert(message: "Preço do produto é obrigatório!")
-                return false
-            }
-
-            return true
-        }
+    @objc private func productImageTapped() {
+        self.present(imagePicker(), animated: true, completion: nil)
+    }
     
-    
-    @IBAction func sendNewProduct(_ sender: Any) {
+    @IBAction func createProduct(_ sender: Any) {
+        let product = createProductEntity()
         
-        let product = Product(context: self.context)
+        if ProductValidator.isValid(product, on: self) {
+            do {
+                try context.save()
+                navigationController?.popViewController(animated: true)
+            } catch let error as NSError {
+                print("Error on save product. \(error), \(error.userInfo)")
+            }
+        } else {
+            context.rollback()
+        }
+    }
+    
+    // MARK: - CoreData functions
+    
+    private func createProductEntity() -> ProductEntity {
+        let product = ProductEntity(context: self.context)
         
-                product.isCreditCard = switchProduct.isOn
-                product.name = nameProduct.text
-                product.image = image?.pngData()
-                product.price = Decimal(string: valueProduct.text ?? "0" ) as NSDecimalNumber?
-                product.state = selectedState as? StateEntity
-                
-                if verifyProduct(product) {
-                    do {
-                        try context.save()
-                        navigationController?.popViewController(animated: true)
-                    } catch let error as NSError {
-                        print("Could not save. \(error), \(error.userInfo)")
-                    }
-                } else {
-                    context.rollback()
-                }
+        product.isCreditCard = switchProduct.isOn
+        product.name = nameProduct.text
+        product.image = image?.pngData()
+        product.price = 1.0
+        product.state = selectedState as? StateEntity
+        
+        return product
+    }
+    
+    private func fetchStates() {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: Entities.State.rawValue)
+        
+        do {
+            self.states = try managedContext.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("Failed to retrieve states. \(error), \(error.userInfo)")
+        }
+    }
+    
+    // MARK: - Image picker
+    
+    private func imagePicker() -> UIAlertController {
+        let action = UIAlertController(title: "Adicionar Imagem",
+                                       message: "De onde você quer escolher a imagem do produto?",
+                                       preferredStyle: .actionSheet)
+        
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            let photoLibrary = UIAlertAction(title: "Biblioteca de fotos", style: .default) { _ in
+                let imagePicker = UIImagePickerController()
+                imagePicker.sourceType = .photoLibrary
+                imagePicker.allowsEditing = true
+                imagePicker.delegate = self
+                self.present(imagePicker, animated: true)
+            }
+            action.addAction(photoLibrary)
+        }
+        
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            let camera = UIAlertAction(title: "Câmera", style: .default) { _ in
+                let imagePicker = UIImagePickerController()
+                imagePicker.sourceType = .camera
+                imagePicker.allowsEditing = true
+                imagePicker.delegate = self
+                self.present(imagePicker, animated: true)
+            }
+            action.addAction(camera)
+        }
+        
+        let cancel = UIAlertAction(title: "Cancelar", style: .cancel)
+        action.addAction(cancel)
+        
+        return action
+    }
+    
+    // MARK: - General configurations
+    
+    private func configureTap() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.productImageTapped))
+        self.imageProduct.addGestureRecognizer(tapGesture)
     }
 }
 
@@ -177,8 +157,8 @@ extension NewProductViewController: UIPickerViewDataSource, UIPickerViewDelegate
 
 extension NewProductViewController: ToolbarPickerViewDelegate {
     func didTapDone(tag: Int) {
-        let row = statePicker.selectedRow(inComponent: 0)
-        statePicker.selectRow(row, inComponent: 0, animated: false)
+        let row = stateSelector.selectedRow(inComponent: 0)
+        stateSelector.selectRow(row, inComponent: 0, animated: false)
         if states.count - 1 >= row {
             stateProduct.text = states[row].value(forKeyPath: "name") as? String
         }
@@ -190,7 +170,6 @@ extension NewProductViewController: ToolbarPickerViewDelegate {
     
     func didTapCancel(tag: Int) {
         stateProduct.text = selectedState?.value(forKeyPath: "name") as? String
-        
         self.view.endEditing(true)
     }
 }
