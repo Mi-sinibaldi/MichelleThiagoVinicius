@@ -48,7 +48,7 @@ class NewProductViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.fetchStates()
+        self.retrieveStates()
     }
     
     // MARK: - Button and Image View actions
@@ -80,13 +80,13 @@ class NewProductViewController: UIViewController {
         product.isCreditCard = switchProduct.isOn
         product.name = nameProduct.text
         product.image = image?.pngData()
-        product.price = 1.0
+        product.price = Double(valueProduct.text ?? "") ?? -1.0
         product.state = selectedState as? StateEntity
         
         return product
     }
     
-    private func fetchStates() {
+    private func retrieveStates() {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: Entities.State.rawValue)

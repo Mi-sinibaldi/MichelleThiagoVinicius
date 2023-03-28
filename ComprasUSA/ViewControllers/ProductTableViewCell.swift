@@ -8,9 +8,10 @@
 import UIKit
 
 final class ProductTableViewCell: UITableViewCell {
-    @IBOutlet weak var productImage: UIImageView!
+    
     @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var paymentType: UILabel!
-    @IBOutlet weak var state: UILabel!
     @IBOutlet weak var price: UILabel!
+    @IBOutlet weak var productImage: UIImageView!
+    @IBOutlet weak var state: UILabel!
+    @IBOutlet weak var paymentType: UILabel!
 }

@@ -26,12 +26,12 @@ class ProductValidator: Validator {
             Alert.showAlert(message: "Por favor selecione o estado do produto.", viewController: on)
             return false
         }
-        /*
-        guard let _ = entity.price else {
-            Alert.showAlert(message: "Por favor informe o preço do produto", viewController: on)
+        
+        if entity.price <= 0.0 {
+            Alert.showAlert(message: "Por favor informe o preço valido para o produto", viewController: on)
             return false
         }
-        */
+        
         return true
     }
 }

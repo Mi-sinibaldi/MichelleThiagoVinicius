@@ -108,14 +108,6 @@
 			path = Validators;
 			sourceTree = "<group>";
 		};
-		D305317229CA696600CE1C4C /* NewProduct */ = {
-			isa = PBXGroup;
-			children = (
-				4E94B7D929C6804600111AC0 /* NewProductViewController.swift */,
-			);
-			path = NewProduct;
-			sourceTree = "<group>";
-		};
 		D3603ABA29C34C3000CE0825 = {
 			isa = PBXGroup;
 			children = (
@@ -159,7 +151,7 @@
 		D387039129C3A55F004A8058 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				D305317229CA696600CE1C4C /* NewProduct */,
+				4E94B7D929C6804600111AC0 /* NewProductViewController.swift */,
 				4E94B7DB29C681B700111AC0 /* SettingsViewController.swift */,
 				4E94B7DE29C681CA00111AC0 /* ShoppingListViewController.swift */,
 				4E94B7E029C681DF00111AC0 /* ShoppingSummaryViewController.swift */,

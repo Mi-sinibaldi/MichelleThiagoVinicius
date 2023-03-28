@@ -161,7 +161,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Product" rowHeight="126" id="zqb-DM-Dcf" customClass="ProductTableViewCell" customModule="ComprasUSA" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductId" rowHeight="126" id="zqb-DM-Dcf" customClass="ProductTableViewCell" customModule="ComprasUSA" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="414" height="126"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zqb-DM-Dcf" id="zRW-7h-MS7">
@@ -193,8 +193,8 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" text="Cartão" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ia7-MU-Owt">
-                                            <rect key="frame" x="247" y="45.5" width="40" height="15"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" text="Outro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ia7-MU-Owt">
+                                            <rect key="frame" x="247" y="45.5" width="34" height="15"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -205,8 +205,8 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="250" text="Miami" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GHZ-SB-Kh6">
-                                            <rect key="frame" x="247" y="68.5" width="35.5" height="11"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="250" text="State" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GHZ-SB-Kh6">
+                                            <rect key="frame" x="247" y="68.5" width="31.5" height="11"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -236,11 +236,11 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="name" destination="DGH-yV-0VT" id="BjH-WM-6BU"/>
-                                    <outlet property="paymentType" destination="Ia7-MU-Owt" id="NJY-oq-UMl"/>
-                                    <outlet property="price" destination="36O-VU-N6R" id="ZYT-w0-LBl"/>
-                                    <outlet property="productImage" destination="0HO-ml-mtO" id="LkX-O5-L8s"/>
-                                    <outlet property="state" destination="GHZ-SB-Kh6" id="bJM-8G-Gau"/>
+                                    <outlet property="name" destination="DGH-yV-0VT" id="wGa-oY-etE"/>
+                                    <outlet property="paymentType" destination="Ia7-MU-Owt" id="fVF-4v-gcK"/>
+                                    <outlet property="price" destination="36O-VU-N6R" id="63G-aY-ZGs"/>
+                                    <outlet property="productImage" destination="0HO-ml-mtO" id="0TU-Qm-Dzm"/>
+                                    <outlet property="state" destination="GHZ-SB-Kh6" id="EJ3-lk-fpK"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
