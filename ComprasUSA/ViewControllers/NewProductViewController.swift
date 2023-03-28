@@ -17,7 +17,7 @@ class NewProductViewController: UIViewController {
     @IBOutlet weak var switchProduct: UISwitch!
     @IBOutlet weak var imageProduct: UIImageView!
     
-    private var states: [NSManagedObject] = [] {
+    private var states: [StateEntity] = [] {
         didSet {
             stateSelector.reloadAllComponents()
         }
@@ -51,7 +51,7 @@ class NewProductViewController: UIViewController {
         self.retrieveStates()
     }
     
-    // MARK: - Button and Image View actions
+    // MARK: - Button and ImageView tap action
     
     @objc private func productImageTapped() {
         self.present(imagePicker(), animated: true, completion: nil)
@@ -87,12 +87,10 @@ class NewProductViewController: UIViewController {
     }
     
     private func retrieveStates() {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-        let managedContext = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: Entities.State.rawValue)
+        let fetchRequest: NSFetchRequest<StateEntity> = StateEntity.fetchRequest()
         
         do {
-            self.states = try managedContext.fetch(fetchRequest)
+            self.states = try context.fetch(fetchRequest)
         } catch let error as NSError {
             print("Failed to retrieve states. \(error), \(error.userInfo)")
         }
