@@ -100,20 +100,16 @@ class SettingsViewController: UIViewController {
     }
     
     private func saveNewState(name: String, rate: Double) {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-        let context = appDelegate.persistentContainer.viewContext
-        
-        guard let entity = NSEntityDescription.entity(forEntityName: "StateId", in: context) else { return }
-        let state = NSManagedObject(entity: entity, insertInto: context)
-        
-        state.setValue(name, forKeyPath: "name")
-        state.setValue(rate, forKeyPath: "rate")
+        let state = StateEntity(context: self.context)
+        state.tax = rate
+        state.name = name
+                
         
         do {
             try context.save()
-            self.states.append(state)
+            navigationController?.popViewController(animated: true)
         } catch let error as NSError {
-            print("Unable to save state. \(error), \(error.userInfo)")
+            print("Error on save product. \(error), \(error.userInfo)")
         }
     }
 }
