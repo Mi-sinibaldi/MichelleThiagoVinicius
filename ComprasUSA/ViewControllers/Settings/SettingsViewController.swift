@@ -14,7 +14,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var rateSettings: UITextField!
     @IBOutlet weak var statesTableView: UITableView!
     
-    var states: [NSManagedObject] = [] {
+    var states: [StateEntity] = [] {
         didSet {
             DispatchQueue.main.async {
                 self.statesTableView.reloadData()
@@ -58,14 +58,10 @@ class SettingsViewController: UIViewController {
     }
     
     private func retrieveStates() {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-        
-        let managedContext = appDelegate.persistentContainer.viewContext
-        
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "StateEntity")
+        let fetchRequest: NSFetchRequest<StateEntity> = StateEntity.fetchRequest()
         
         do {
-            self.states = try managedContext.fetch(fetchRequest)
+            self.states = try context.fetch(fetchRequest)
         } catch let error as NSError {
             print("Failed to retrieve states. \(error), \(error.userInfo)")
         }
@@ -86,9 +82,9 @@ class SettingsViewController: UIViewController {
             guard let fields = alertController.textFields, fields.count > 1 else { return }
             
             let state = fields[0].text ?? ""
-            let rate = Double(fields[1].text ?? "0") ?? 0.0
+            let tax = Double(fields[1].text ?? "0") ?? 0.0
             
-            self.saveNewState(name: state, rate: rate)
+            self.saveNewState(name: state, tax: tax)
         })
         
         let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
@@ -99,11 +95,10 @@ class SettingsViewController: UIViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
-    private func saveNewState(name: String, rate: Double) {
+    private func saveNewState(name: String, tax: Double) {
         let state = StateEntity(context: self.context)
-        state.tax = rate
+        state.tax = tax
         state.name = name
-                
         
         do {
             try context.save()
@@ -123,11 +118,11 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "StateId", for: indexPath) as? SettingsStateTableView else {
             return UITableViewCell()
         }
-        
+                
         let state = states[indexPath.row]
         
-        cell.state?.text = state.value(forKeyPath: "name") as? String
-        cell.rate?.text = String(state.value(forKeyPath: "rate") as? Double ?? 0.0)
+        cell.name?.text = state.name
+        cell.tax?.text = String(state.tax)
         
         return cell
     }

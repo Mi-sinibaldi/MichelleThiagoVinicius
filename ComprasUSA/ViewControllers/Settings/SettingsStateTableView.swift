@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 final class SettingsStateTableView: UITableViewCell {
-    
-    @IBOutlet weak var state: UILabel!
-    @IBOutlet weak var rate: UILabel!
+    @IBOutlet weak var tax: UILabel!
+    @IBOutlet weak var name: UILabel!
 }

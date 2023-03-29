@@ -75,7 +75,7 @@
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StateId" id="e0y-Ug-Ytg" customClass="StateTableViewCell" customModule="ComprasUSA" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StateId" id="e0y-Ug-Ytg" customClass="SettingsStateTableView" customModule="ComprasUSA" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="414" height="53.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="e0y-Ug-Ytg" id="RQk-K6-GbY">
@@ -105,6 +105,10 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="ibW-Ac-hKy" secondAttribute="bottom" constant="5" id="ukZ-mf-YJC"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="name" destination="NUr-K1-Bww" id="QFA-So-Yrp"/>
+                                            <outlet property="tax" destination="ibW-Ac-hKy" id="wKk-d0-Gr8"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
