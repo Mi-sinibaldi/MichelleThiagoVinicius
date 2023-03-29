@@ -102,6 +102,7 @@ class SettingsViewController: UIViewController {
         
         do {
             try context.save()
+            retrieveStates()
             navigationController?.popViewController(animated: true)
         } catch let error as NSError {
             print("Error on save product. \(error), \(error.userInfo)")
