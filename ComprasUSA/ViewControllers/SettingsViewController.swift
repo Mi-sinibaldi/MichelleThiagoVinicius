@@ -30,7 +30,6 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.statesTableView.delegate = self
         self.statesTableView.dataSource = self
         
@@ -64,7 +63,8 @@ class SettingsViewController: UIViewController {
         
         let managedContext = appDelegate.persistentContainer.viewContext
         
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "State")
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "StateEntity")
+
         
         do {
             self.states = try managedContext.fetch(fetchRequest)
@@ -104,8 +104,9 @@ class SettingsViewController: UIViewController {
     private func saveNewState(name: String, tax: Double) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let context = appDelegate.persistentContainer.viewContext
-        
-        guard let entity = NSEntityDescription.entity(forEntityName: "State", in: context) else { return }
+
+        guard let entity = NSEntityDescription.entity(forEntityName: "StateEntity", in: context) else { return }
+
         let state = NSManagedObject(entity: entity, insertInto: context)
         
         state.setValue(name, forKeyPath: "name")
@@ -147,7 +148,9 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
             let state = self.states[indexPath.row]
             context.delete(state)
             
-            let fetchRequest: NSFetchRequest<Product> = Product.fetchRequest()
+
+            let fetchRequest: NSFetchRequest<ProductEntity> = ProductEntity.fetchRequest()
+
             let predicate = NSPredicate(format: "state == %@", state)
             fetchRequest.predicate = predicate
             
