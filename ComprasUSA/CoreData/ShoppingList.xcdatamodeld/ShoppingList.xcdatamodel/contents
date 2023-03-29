@@ -5,11 +5,10 @@
         <attribute name="isCreditCard" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="price" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <relationship name="state" maxCount="1" deletionRule="Nullify" destinationEntity="StateEntity" inverseName="product" inverseEntity="StateEntity"/>
+        <relationship name="state" maxCount="1" deletionRule="Nullify" destinationEntity="StateEntity"/>
     </entity>
     <entity name="StateEntity" representedClassName="StateEntity" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="tax" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <relationship name="product" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ProductEntity" inverseName="state" inverseEntity="ProductEntity"/>
     </entity>
 </model>

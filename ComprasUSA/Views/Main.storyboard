@@ -70,26 +70,26 @@
                                 <rect key="frame" x="0.0" y="271" width="414" height="472"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="E0k-ax-sGH">
-                                    <rect key="frame" x="0.0" y="132" width="414" height="44"/>
+                                    <rect key="frame" x="0.0" y="131.5" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="State" id="e0y-Ug-Ytg" customClass="StateTableViewCell" customModule="ComprasUSA" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="414" height="54"/>
+                                        <rect key="frame" x="0.0" y="50" width="414" height="53.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="e0y-Ug-Ytg" id="RQk-K6-GbY">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="54"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="53.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estado" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NUr-K1-Bww">
-                                                    <rect key="frame" x="30" y="16" width="53" height="21.999999999999993"/>
+                                                    <rect key="frame" x="30" y="16" width="53" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Valor" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibW-Ac-hKy">
-                                                    <rect key="frame" x="345" y="16" width="39" height="21.999999999999993"/>
+                                                    <rect key="frame" x="345" y="16" width="39" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" systemColor="systemRedColor"/>
                                                     <nil key="highlightedColor"/>
@@ -105,10 +105,6 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="ibW-Ac-hKy" secondAttribute="bottom" constant="5" id="ukZ-mf-YJC"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="stateTextField" destination="NUr-K1-Bww" id="IJV-Zq-KTt"/>
-                                            <outlet property="taxTextField" destination="ibW-Ac-hKy" id="VOw-jy-uIm"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
@@ -147,10 +143,15 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Ajustes" image="gearshape.2.fill" catalog="system" id="uZt-0G-KhO"/>
                     <navigationItem key="navigationItem" id="cBn-SK-o7S"/>
+                    <connections>
+                        <outlet property="dollarExchangeRate" destination="Xv4-5v-jAE" id="VXj-Ug-hT7"/>
+                        <outlet property="rateSettings" destination="Xv4-5v-jAE" id="NxI-AU-G2z"/>
+                        <outlet property="statesTableView" destination="d1F-bt-FL5" id="F0i-Mw-TKJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qgd-jt-iga" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3403" y="-432"/>
+            <point key="canvasLocation" x="3402.898550724638" y="-432.58928571428572"/>
         </scene>
         <!--List-->
         <scene sceneID="LPU-LQ-1oL">
