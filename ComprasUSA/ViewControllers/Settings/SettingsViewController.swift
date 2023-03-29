@@ -71,7 +71,7 @@ class SettingsViewController: UIViewController {
         }
     }
     
-    @IBAction func addStates(_ sender: Any) {
+    @IBAction func addState(_ sender: Any) {
         let alertController = UIAlertController(title: "Adicionar Estado", message: "", preferredStyle: .alert)
         
         alertController.addTextField { (textField : UITextField!) -> Void in
@@ -103,7 +103,7 @@ class SettingsViewController: UIViewController {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let context = appDelegate.persistentContainer.viewContext
         
-        guard let entity = NSEntityDescription.entity(forEntityName: "StateEntity", in: context) else { return }
+        guard let entity = NSEntityDescription.entity(forEntityName: "StateId", in: context) else { return }
         let state = NSManagedObject(entity: entity, insertInto: context)
         
         state.setValue(name, forKeyPath: "name")
@@ -124,7 +124,7 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "StateEntity", for: indexPath) as? SettingsStateTableView else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "StateId", for: indexPath) as? SettingsStateTableView else {
             return UITableViewCell()
         }
         
