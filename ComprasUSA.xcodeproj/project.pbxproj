@@ -20,6 +20,7 @@
 		4E94B80B29CD1A5300111AC0 /* StateValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E94B80A29CD1A5300111AC0 /* StateValidator.swift */; };
 		4E94B80F29CD1D8600111AC0 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E94B80E29CD1D8600111AC0 /* Alert.swift */; };
 		4E94B81129CD349100111AC0 /* Entities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E94B81029CD349100111AC0 /* Entities.swift */; };
+		4E94B81529D5105D00111AC0 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4E94B81429D5105D00111AC0 /* Settings.bundle */; };
 		D31C94EE29D47DD4003EDF8A /* SettingsStateTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31C94ED29D47DD4003EDF8A /* SettingsStateTableView.swift */; };
 		D3603AC729C34C3000CE0825 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3603AC629C34C3000CE0825 /* AppDelegate.swift */; };
 		D3603AC929C34C3000CE0825 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3603AC829C34C3000CE0825 /* SceneDelegate.swift */; };
@@ -43,6 +44,7 @@
 		4E94B80A29CD1A5300111AC0 /* StateValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateValidator.swift; sourceTree = "<group>"; };
 		4E94B80E29CD1D8600111AC0 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		4E94B81029CD349100111AC0 /* Entities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entities.swift; sourceTree = "<group>"; };
+		4E94B81429D5105D00111AC0 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		D31C94ED29D47DD4003EDF8A /* SettingsStateTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStateTableView.swift; sourceTree = "<group>"; };
 		D3603AC329C34C3000CE0825 /* ComprasUSA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComprasUSA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3603AC629C34C3000CE0825 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				D3603AC829C34C3000CE0825 /* SceneDelegate.swift */,
 				D3603ACF29C34C3200CE0825 /* Assets.xcassets */,
 				4E94B80E29CD1D8600111AC0 /* Alert.swift */,
+				4E94B81429D5105D00111AC0 /* Settings.bundle */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E94B81529D5105D00111AC0 /* Settings.bundle in Resources */,
 				D387037E29C399CF004A8058 /* Main.storyboard in Resources */,
 				D3603AD029C34C3200CE0825 /* Assets.xcassets in Resources */,
 				D387038029C39A59004A8058 /* LaunchScreen.storyboard in Resources */,
