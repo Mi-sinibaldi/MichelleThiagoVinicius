@@ -10,8 +10,8 @@ import CoreData
 
 class SettingsViewController: UIViewController {
 
-    @IBOutlet weak var dollarExchangeRate: UITextField!
-    @IBOutlet weak var rateSettings: UITextField!
+    @IBOutlet weak var dollarTextField: UITextField!
+    @IBOutlet weak var iofTextField: UITextField!
     @IBOutlet weak var statesTableView: UITableView!
     
     var states: [StateEntity] = [] {
@@ -51,8 +51,8 @@ class SettingsViewController: UIViewController {
     
     private func updateScreenFields() {
         let defaults = UserDefaults.standard
-        self.dollarExchangeRate.text = defaults.string(forKey: "dollar_exchange_rate")
-        self.rateSettings.text = defaults.string(forKey: "rate_Settings")
+        self.dollarTextField.text = defaults.string(forKey: "dollar")
+        self.iofTextField.text = defaults.string(forKey: "iof")
         
         self.statesTableView.reloadData()
     }
