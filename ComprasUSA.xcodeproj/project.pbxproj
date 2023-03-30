@@ -145,6 +145,7 @@
 				4E94B7D429C678C600111AC0 /* Models */,
 				D387039129C3A55F004A8058 /* ViewControllers */,
 				D387037C29C399A6004A8058 /* Views */,
+				D38703A629C3F35F004A8058 /* ToolbarView */,
 			);
 			path = ComprasUSA;
 			sourceTree = "<group>";
@@ -154,7 +155,6 @@
 			children = (
 				D387037F29C39A59004A8058 /* LaunchScreen.storyboard */,
 				D387037D29C399CF004A8058 /* Main.storyboard */,
-				D38703A629C3F35F004A8058 /* ToolbarView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
