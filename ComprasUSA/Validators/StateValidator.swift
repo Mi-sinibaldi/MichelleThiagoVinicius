@@ -10,9 +10,9 @@ import CoreData
 import UIKit
 
 class StateValidator: Validator {
-    typealias E = StateEntity
+    typealias E = State
     
-    static func isValid(_ entity: StateEntity, on: UIViewController) -> Bool {
+    static func isValid(_ entity: State, on: UIViewController) -> Bool {
         return true
     }
 }

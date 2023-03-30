@@ -14,7 +14,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var iofTextField: UITextField!
     @IBOutlet weak var statesTableView: UITableView!
     
-    var states: [StateEntity] = [] {
+    var states: [State] = [] {
         didSet {
             DispatchQueue.main.async {
                 self.statesTableView.reloadData()
@@ -58,7 +58,7 @@ class SettingsViewController: UIViewController {
     }
     
     private func retrieveStates() {
-        let fetchRequest: NSFetchRequest<StateEntity> = StateEntity.fetchRequest()
+        let fetchRequest: NSFetchRequest<State> = State.fetchRequest()
         
         do {
             self.states = try context.fetch(fetchRequest)
@@ -96,7 +96,7 @@ class SettingsViewController: UIViewController {
     }
     
     private func saveNewState(name: String, tax: Double) {
-        let state = StateEntity(context: self.context)
+        let state = State(context: self.context)
         state.tax = tax
         state.name = name
         
@@ -136,7 +136,7 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
             let state = self.states[indexPath.row]
             context.delete(state)
             
-            let fetchRequest: NSFetchRequest<ProductEntity> = ProductEntity.fetchRequest()
+            let fetchRequest: NSFetchRequest<Product> = Product.fetchRequest()
             let predicate = NSPredicate(format: "state == %@", state)
             fetchRequest.predicate = predicate
             

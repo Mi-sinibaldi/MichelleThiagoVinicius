@@ -10,7 +10,7 @@ import CoreData
 
 class ShoppingListViewController: UITableViewController {
 
-    var products: [ProductEntity] = [] {
+    var products: [Product] = [] {
         didSet {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -93,7 +93,7 @@ class ShoppingListViewController: UITableViewController {
     }
     
     private func retrieveProducts() {
-        let fetchRequest: NSFetchRequest<ProductEntity> = ProductEntity.fetchRequest()
+        let fetchRequest: NSFetchRequest<Product> = Product.fetchRequest()
         
         do {
             products = try context.fetch(fetchRequest)

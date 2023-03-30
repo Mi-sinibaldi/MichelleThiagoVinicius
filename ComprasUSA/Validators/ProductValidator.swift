@@ -9,9 +9,9 @@ import Foundation
 import UIKit
 
 class ProductValidator: Validator {
-    typealias E = ProductEntity
+    typealias E = Product
     
-    static func isValid(_ entity: ProductEntity, on: UIViewController) -> Bool {
+    static func isValid(_ entity: Product, on: UIViewController) -> Bool {
         guard let name =  entity.name, !name.isEmpty else {
             Alert.showAlert(message: "Por favor informe o nome do produto.", viewController: on)
             return false

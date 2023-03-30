@@ -17,7 +17,7 @@ class NewProductViewController: UIViewController {
     @IBOutlet weak var switchProduct: UISwitch!
     @IBOutlet weak var imageProduct: UIImageView!
     
-    private var states: [StateEntity] = [] {
+    private var states: [State] = [] {
         didSet {
             stateSelector.reloadAllComponents()
         }
@@ -74,20 +74,20 @@ class NewProductViewController: UIViewController {
     
     // MARK: - CoreData functions
     
-    private func createProductEntity() -> ProductEntity {
-        let product = ProductEntity(context: self.context)
+    private func createProductEntity() -> Product {
+        let product = Product(context: self.context)
         
         product.isCreditCard = switchProduct.isOn
         product.name = nameProduct.text
         product.image = image?.pngData()
         product.price = Double(valueProduct.text ?? "") ?? -1.0
-        product.state = selectedState as? StateEntity
+        product.state = selectedState as? State
         
         return product
     }
     
     private func retrieveStates() {
-        let fetchRequest: NSFetchRequest<StateEntity> = StateEntity.fetchRequest()
+        let fetchRequest: NSFetchRequest<State> = State.fetchRequest()
         
         do {
             self.states = try context.fetch(fetchRequest)
