@@ -14,6 +14,8 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var iofTextField: UITextField!
     @IBOutlet weak var statesTableView: UITableView!
     
+    let emptyTableViewMessage = EmptyTableViewMessage()
+    
     var states: [State] = [] {
         didSet {
             DispatchQueue.main.async {
@@ -31,6 +33,7 @@ class SettingsViewController: UIViewController {
 
         self.statesTableView.delegate = self
         self.statesTableView.dataSource = self
+        self.emptyTableViewMessage.message = "Lista de estados vazia."
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.defaultsChanged),
                                                name: UserDefaults.didChangeNotification, object: nil)
@@ -116,7 +119,14 @@ class SettingsViewController: UIViewController {
 
 extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        states.count
+        
+        if states.count == 0 {
+            tableView.addSubview(emptyTableViewMessage)
+            emptyTableViewMessage.frame = tableView.bounds
+        } else {
+            emptyTableViewMessage.removeFromSuperview()
+        }
+        return states.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

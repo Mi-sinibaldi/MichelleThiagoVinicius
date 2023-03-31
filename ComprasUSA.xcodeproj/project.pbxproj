@@ -20,6 +20,7 @@
 		4E94B80B29CD1A5300111AC0 /* StateValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E94B80A29CD1A5300111AC0 /* StateValidator.swift */; };
 		4E94B80F29CD1D8600111AC0 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E94B80E29CD1D8600111AC0 /* Alert.swift */; };
 		4E94B81529D5105D00111AC0 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4E94B81429D5105D00111AC0 /* Settings.bundle */; };
+		4E94B81829D6738E00111AC0 /* EmptyTableViewMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E94B81729D6738E00111AC0 /* EmptyTableViewMessage.swift */; };
 		D31C94EE29D47DD4003EDF8A /* SettingsStateTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31C94ED29D47DD4003EDF8A /* SettingsStateTableView.swift */; };
 		D3603AC729C34C3000CE0825 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3603AC629C34C3000CE0825 /* AppDelegate.swift */; };
 		D3603AC929C34C3000CE0825 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3603AC829C34C3000CE0825 /* SceneDelegate.swift */; };
@@ -43,6 +44,7 @@
 		4E94B80A29CD1A5300111AC0 /* StateValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateValidator.swift; sourceTree = "<group>"; };
 		4E94B80E29CD1D8600111AC0 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		4E94B81429D5105D00111AC0 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		4E94B81729D6738E00111AC0 /* EmptyTableViewMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTableViewMessage.swift; sourceTree = "<group>"; };
 		D31C94ED29D47DD4003EDF8A /* SettingsStateTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStateTableView.swift; sourceTree = "<group>"; };
 		D3603AC329C34C3000CE0825 /* ComprasUSA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComprasUSA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3603AC629C34C3000CE0825 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 		D31C94EA29D47CFB003EDF8A /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				4E94B81729D6738E00111AC0 /* EmptyTableViewMessage.swift */,
 				4E94B7DB29C681B700111AC0 /* SettingsViewController.swift */,
 				D31C94ED29D47DD4003EDF8A /* SettingsStateTableView.swift */,
 			);
@@ -264,6 +267,7 @@
 				4E94B80429CD16A600111AC0 /* UIViewControllerExtension.swift in Sources */,
 				4E94B7EC29C6A6BA00111AC0 /* ShoppingList.xcdatamodeld in Sources */,
 				4E94B7DA29C6804600111AC0 /* NewProductViewController.swift in Sources */,
+				4E94B81829D6738E00111AC0 /* EmptyTableViewMessage.swift in Sources */,
 				4E94B80F29CD1D8600111AC0 /* Alert.swift in Sources */,
 				D31C94EE29D47DD4003EDF8A /* SettingsStateTableView.swift in Sources */,
 				D3603AC929C34C3000CE0825 /* SceneDelegate.swift in Sources */,
