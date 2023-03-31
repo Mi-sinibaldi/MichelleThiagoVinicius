@@ -426,6 +426,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Total da compra" image="suitcase.fill" catalog="system" id="S8c-Ib-A5U"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="brlTotalLabel" destination="y9f-Ne-060" id="LIp-1A-wYq"/>
+                        <outlet property="dollarTotalLabel" destination="KoN-AB-grJ" id="oay-F4-Trp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N7q-cX-EDb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

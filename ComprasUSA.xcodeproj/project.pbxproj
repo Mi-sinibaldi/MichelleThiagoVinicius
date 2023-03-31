@@ -103,6 +103,15 @@
 			path = Validators;
 			sourceTree = "<group>";
 		};
+		4E94B81629D661BB00111AC0 /* ProductList */ = {
+			isa = PBXGroup;
+			children = (
+				4E94B7DE29C681CA00111AC0 /* ShoppingListViewController.swift */,
+				4E94B7E729C69EC500111AC0 /* ProductTableViewCell.swift */,
+			);
+			path = ProductList;
+			sourceTree = "<group>";
+		};
 		D31C94EA29D47CFB003EDF8A /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,11 +163,10 @@
 		D387039129C3A55F004A8058 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4E94B81629D661BB00111AC0 /* ProductList */,
 				D31C94EA29D47CFB003EDF8A /* Settings */,
 				4E94B7D929C6804600111AC0 /* NewProductViewController.swift */,
-				4E94B7DE29C681CA00111AC0 /* ShoppingListViewController.swift */,
 				4E94B7E029C681DF00111AC0 /* ShoppingSummaryViewController.swift */,
-				4E94B7E729C69EC500111AC0 /* ProductTableViewCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
