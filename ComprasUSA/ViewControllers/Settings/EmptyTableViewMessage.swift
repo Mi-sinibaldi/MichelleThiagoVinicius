@@ -10,11 +10,10 @@ import UIKit
 
 class EmptyTableViewMessage: UIView {
     let messageLabel = UILabel()
-    var message: String? = nil
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        messageLabel.text = message ?? "Lista de estados vazia."
+        messageLabel.text = "Lista de estados vazia."
         messageLabel.textAlignment = .center
         messageLabel.textColor = .gray
         addSubview(messageLabel)

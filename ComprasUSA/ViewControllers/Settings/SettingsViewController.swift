@@ -33,7 +33,6 @@ class SettingsViewController: UIViewController {
 
         self.statesTableView.delegate = self
         self.statesTableView.dataSource = self
-        self.emptyTableViewMessage.message = "Lista de estados vazia."
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.defaultsChanged),
                                                name: UserDefaults.didChangeNotification, object: nil)
