@@ -100,12 +100,16 @@ class SettingsViewController: UIViewController {
         state.tax = tax
         state.name = name
         
-        do {
-            try context.save()
-            retrieveStates()
-            navigationController?.popViewController(animated: true)
-        } catch let error as NSError {
-            print("Error on save product. \(error), \(error.userInfo)")
+        if StateValidator.isValid(state, on: self) {
+            do {
+                try context.save()
+                retrieveStates()
+                navigationController?.popViewController(animated: true)
+            } catch let error as NSError {
+                print("Error on save product. \(error), \(error.userInfo)")
+            }
+        } else {
+            context.rollback()
         }
     }
 }
