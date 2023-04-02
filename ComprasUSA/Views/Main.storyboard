@@ -47,10 +47,10 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="110" id="sAv-uB-94s"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" text="IOF (%):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="iTn-oN-4eU">
-                                <rect key="frame" x="120.5" y="162.5" width="62.5" height="20.5"/>
+                                <rect key="frame" x="120" y="162" width="63" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -58,7 +58,7 @@
                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xv4-5v-jAE">
                                 <rect key="frame" x="198" y="156" width="206" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Impostos por estado" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OIK-Ee-lhH">
                                 <rect key="frame" x="116" y="223" width="182" height="23"/>
@@ -70,26 +70,26 @@
                                 <rect key="frame" x="0.0" y="271" width="414" height="472"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="E0k-ax-sGH">
-                                    <rect key="frame" x="0.0" y="132" width="414" height="44"/>
+                                    <rect key="frame" x="0.0" y="131" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="State" id="e0y-Ug-Ytg" customClass="StateTableViewCell" customModule="ComprasUSA" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="414" height="54"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StateId" id="e0y-Ug-Ytg" customClass="SettingsStateTableView" customModule="ComprasUSA" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="414" height="53"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="e0y-Ug-Ytg" id="RQk-K6-GbY">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="54"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="53"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estado" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NUr-K1-Bww">
-                                                    <rect key="frame" x="30" y="16" width="53" height="21.999999999999993"/>
+                                                    <rect key="frame" x="30" y="16" width="53" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Valor" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibW-Ac-hKy">
-                                                    <rect key="frame" x="345" y="16" width="39" height="21.999999999999993"/>
+                                                    <rect key="frame" x="345" y="16" width="39" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" systemColor="systemRedColor"/>
                                                     <nil key="highlightedColor"/>
@@ -106,8 +106,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="stateTextField" destination="NUr-K1-Bww" id="IJV-Zq-KTt"/>
-                                            <outlet property="taxTextField" destination="ibW-Ac-hKy" id="VOw-jy-uIm"/>
+                                            <outlet property="setName" destination="NUr-K1-Bww" id="QFA-So-Yrp"/>
+                                            <outlet property="setTaxa" destination="ibW-Ac-hKy" id="wKk-d0-Gr8"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -146,15 +146,16 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Ajustes" image="gearshape.2.fill" catalog="system" id="uZt-0G-KhO"/>
-                    <!--<navigationItem key="navigationItem" id="cBn-SK-o7S"/>-->
+                    <navigationItem key="navigationItem" id="cBn-SK-o7S"/>
                     <connections>
-                        <outlet property="financialTaxTextField" destination="2yW-8T-whP" id="OdY-Io-mSd"/>
-                        <outlet property="quotationTextField" destination="WIP-Tl-W9D" id="qzI-7W-8m5"/>
-                        <outlet property="statesTableView" destination="Exf-OH-1wi" id="3d6-Ay-ZM9"/>
-                    </connections>                </viewController>
+                        <outlet property="priceTextField" destination="fxF-P2-a25" id="grD-NN-zxs"/>
+                        <outlet property="iofTextField" destination="Xv4-5v-jAE" id="D3w-tg-SoK"/>
+                        <outlet property="stateTableView" destination="d1F-bt-FL5" id="F0i-Mw-TKJ"/>
+                    </connections>
+                </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qgd-jt-iga" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3403" y="-432"/>
+            <point key="canvasLocation" x="3402.898550724638" y="-432.58928571428572"/>
         </scene>
         <!--List-->
         <scene sceneID="LPU-LQ-1oL">
@@ -425,6 +426,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Total da compra" image="suitcase.fill" catalog="system" id="S8c-Ib-A5U"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="brlTotalLabel" destination="y9f-Ne-060" id="LIp-1A-wYq"/>
+                        <outlet property="dollarTotalLabel" destination="KoN-AB-grJ" id="oay-F4-Trp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N7q-cX-EDb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
