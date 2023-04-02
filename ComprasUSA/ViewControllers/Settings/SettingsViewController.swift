@@ -97,6 +97,23 @@ class SettingsViewController: UIViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
+    private func editState(indexPath: Int, name: String, tax: Double) {
+        let state = self.states[indexPath]
+        state.tax = tax
+        state.name = name
+        
+        if StateValidator.isValid(state, on: self) {
+            do {
+                try context.save()
+                retrieveStates()
+            } catch let error as NSError {
+                print("Error on save product. \(error), \(error.userInfo)")
+            }
+        } else {
+            context.rollback()
+        }
+    }
+    
     private func saveNewState(name: String, tax: Double) {
         let state = State(context: self.context)
         state.tax = tax
@@ -118,7 +135,6 @@ class SettingsViewController: UIViewController {
 
 extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         if states.count == 0 {
             tableView.addSubview(emptyTableViewMessage)
             emptyTableViewMessage.frame = tableView.bounds
@@ -132,14 +148,54 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "StateId", for: indexPath) as? SettingsStateTableView else {
             return UITableViewCell()
         }
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(rowTapped(_:)))
+        cell.addGestureRecognizer(tapGesture)
                 
         let state = states[indexPath.row]
         
         cell.name?.text = state.name
         cell.tax?.text = String(state.tax)
+        cell.tag = indexPath.row
         
         return cell
     }
+        
+    @objc func rowTapped(_ sender: UITapGestureRecognizer) {
+        guard let row = sender.view as? SettingsStateTableView else {
+            return
+        }
+        
+        let alertController = UIAlertController(title: "Editar Estado", message: "", preferredStyle: .alert)
+        
+        alertController.addTextField { (textField : UITextField!) -> Void in
+            textField.placeholder = "Nome do estado"
+            textField.text = row.name.text
+        }
+        
+        alertController.addTextField { (textField : UITextField!) -> Void in
+            textField.placeholder = "Imposto"
+            textField.text = row.tax.text
+        }
+        
+        let saveAction = UIAlertAction(title: "Salvar", style: .default, handler: { alert -> Void in
+            guard let fields = alertController.textFields, fields.count > 1 else { return }
+            let indexPath = IndexPath(row: row.tag, section: 0)
+            
+            let state = fields[0].text ?? ""
+            let tax = Double(fields[1].text ?? "0") ?? 0.0
+            
+            self.editState(indexPath: indexPath.row, name: state, tax: tax)
+        })
+        
+        let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
+        
+        alertController.addAction(saveAction)
+        alertController.addAction(cancelAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
