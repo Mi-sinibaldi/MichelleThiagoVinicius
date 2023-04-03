@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4E94B7DA29C6804600111AC0 /* NewProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E94B7D929C6804600111AC0 /* NewProductViewController.swift */; };
-		4E94B7DC29C681B700111AC0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E94B7DB29C681B700111AC0 /* SettingsViewController.swift */; };
 		4E94B7DF29C681CA00111AC0 /* ShoppingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E94B7DE29C681CA00111AC0 /* ShoppingListViewController.swift */; };
 		4E94B7E129C681DF00111AC0 /* ShoppingSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E94B7E029C681DF00111AC0 /* ShoppingSummaryViewController.swift */; };
 		4E94B7E429C68E7E00111AC0 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E94B7E329C68E7E00111AC0 /* UITableViewExtension.swift */; };
@@ -20,7 +19,8 @@
 		4E94B80B29CD1A5300111AC0 /* StateValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E94B80A29CD1A5300111AC0 /* StateValidator.swift */; };
 		4E94B80F29CD1D8600111AC0 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E94B80E29CD1D8600111AC0 /* Alert.swift */; };
 		4E94B81129CD349100111AC0 /* Entities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E94B81029CD349100111AC0 /* Entities.swift */; };
-		AF761E4029D49EB3008DB75F /* StateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF761E3F29D49EB3008DB75F /* StateTableViewCell.swift */; };
+		AFCC907629DA2B4C00381CBB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCC907529DA2B4C00381CBB /* SettingsViewController.swift */; };
+		AFCC907829DA2B8B00381CBB /* SettingsStateTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCC907729DA2B8B00381CBB /* SettingsStateTableView.swift */; };
 		D3603AC729C34C3000CE0825 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3603AC629C34C3000CE0825 /* AppDelegate.swift */; };
 		D3603AC929C34C3000CE0825 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3603AC829C34C3000CE0825 /* SceneDelegate.swift */; };
 		D3603AD029C34C3200CE0825 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3603ACF29C34C3200CE0825 /* Assets.xcassets */; };
@@ -31,7 +31,6 @@
 
 /* Begin PBXFileReference section */
 		4E94B7D929C6804600111AC0 /* NewProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProductViewController.swift; sourceTree = "<group>"; };
-		4E94B7DB29C681B700111AC0 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		4E94B7DE29C681CA00111AC0 /* ShoppingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListViewController.swift; sourceTree = "<group>"; };
 		4E94B7E029C681DF00111AC0 /* ShoppingSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingSummaryViewController.swift; sourceTree = "<group>"; };
 		4E94B7E329C68E7E00111AC0 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
@@ -43,7 +42,8 @@
 		4E94B80A29CD1A5300111AC0 /* StateValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateValidator.swift; sourceTree = "<group>"; };
 		4E94B80E29CD1D8600111AC0 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		4E94B81029CD349100111AC0 /* Entities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entities.swift; sourceTree = "<group>"; };
-		AF761E3F29D49EB3008DB75F /* StateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateTableViewCell.swift; sourceTree = "<group>"; };
+		AFCC907529DA2B4C00381CBB /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		AFCC907729DA2B8B00381CBB /* SettingsStateTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStateTableView.swift; sourceTree = "<group>"; };
 		D3603AC329C34C3000CE0825 /* ComprasUSA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComprasUSA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3603AC629C34C3000CE0825 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3603AC829C34C3000CE0825 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +110,15 @@
 			path = Validators;
 			sourceTree = "<group>";
 		};
+		AFCC907429DA2B1500381CBB /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				AFCC907529DA2B4C00381CBB /* SettingsViewController.swift */,
+				AFCC907729DA2B8B00381CBB /* SettingsStateTableView.swift */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
 		D3603ABA29C34C3000CE0825 = {
 			isa = PBXGroup;
 			children = (
@@ -153,12 +162,11 @@
 		D387039129C3A55F004A8058 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				AFCC907429DA2B1500381CBB /* Settings */,
 				4E94B7D929C6804600111AC0 /* NewProductViewController.swift */,
-				4E94B7DB29C681B700111AC0 /* SettingsViewController.swift */,
 				4E94B7DE29C681CA00111AC0 /* ShoppingListViewController.swift */,
 				4E94B7E029C681DF00111AC0 /* ShoppingSummaryViewController.swift */,
 				4E94B7E729C69EC500111AC0 /* ProductTableViewCell.swift */,
-				AF761E3F29D49EB3008DB75F /* StateTableViewCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -242,15 +250,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF761E4029D49EB3008DB75F /* StateTableViewCell.swift in Sources */,
 				D3603AC729C34C3000CE0825 /* AppDelegate.swift in Sources */,
 				4E94B80B29CD1A5300111AC0 /* StateValidator.swift in Sources */,
 				D38703A829C3F39C004A8058 /* ToolbarPickerView.swift in Sources */,
 				4E94B7E129C681DF00111AC0 /* ShoppingSummaryViewController.swift in Sources */,
-				4E94B7DC29C681B700111AC0 /* SettingsViewController.swift in Sources */,
 				4E94B80729CD19FA00111AC0 /* Validator.swift in Sources */,
 				4E94B80929CD1A2F00111AC0 /* ProductValidator.swift in Sources */,
 				4E94B7DF29C681CA00111AC0 /* ShoppingListViewController.swift in Sources */,
+				AFCC907629DA2B4C00381CBB /* SettingsViewController.swift in Sources */,
 				4E94B7E429C68E7E00111AC0 /* UITableViewExtension.swift in Sources */,
 				4E94B7E829C69EC500111AC0 /* ProductTableViewCell.swift in Sources */,
 				4E94B80429CD16A600111AC0 /* UIViewControllerExtension.swift in Sources */,
@@ -258,6 +265,7 @@
 				4E94B7DA29C6804600111AC0 /* NewProductViewController.swift in Sources */,
 				4E94B80F29CD1D8600111AC0 /* Alert.swift in Sources */,
 				4E94B81129CD349100111AC0 /* Entities.swift in Sources */,
+				AFCC907829DA2B8B00381CBB /* SettingsStateTableView.swift in Sources */,
 				D3603AC929C34C3000CE0825 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,7 +401,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -424,7 +432,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
